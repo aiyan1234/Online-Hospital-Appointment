@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>JUSTCHECK</title>
+</head>
+
+
+<body>
+    <header>
+        <div class="navdis">
+            <marquee class="dis">Ballari Hospitals are Live. You can book appointments from your comfort zone. Choose your Hospitals and Doctors appropriately and dial to the number given in their profile to book the appointment.</marquee>
+        </div>
+        <div class="navbar">
+            <div class="navlogo"></div>
+            <ul class="navlist">
+                <li class="item"><a href="index.html">Home</a></li>
+                <li class="item"><a href="doctor.html">Doctors</a></li>
+                <li class="item"><a href="hospital.html">Hospitals</a></li>
+                <li class="item"><a href="#a2">About us</a></li>
+            </ul>
+        </div>
+    </header>
+    <div class="baclogo"> 
+        <div class="navsearch">
+            <input class="type" id="search" placeholder="Search for Doctors, Hospitals, Specialization">
+            <div class="seaicon">
+                <button id="searchButton"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div id="flash">Please check the spelling!!</div>
+        </div>
+    </div>
+
+    <h1 class="about" id="a1">About us</h1>
+    <p class="about" id="a2">
+        The main purpose of this website is to provide information and details related to the hospitals and doctors. The specific objective is to provide a list of hospitals and doctors, and the user can book an appointment through the contact number based on their requirement. This website typically provides information about hospital's locations, contact details, and hours of operation.
+    </p>
+
+    <footer>
+        <div class="foot-pan3">
+            <ul class="contact">
+                <li><a href="#"><i class="fa-brands fa-facebook-f"></i></a></li>
+                <li><a href="https://instagram.com/justcheck_ballari?utm_source=qr&igshid=NGExMmI2YTkyZg%3D%3D"><i class="fa-brands fa-instagram"></i></a></li>
+                <li><a href="#"><i class="fa-brands fa-twitter"></i></a></li>
+            </ul>
+            <p class="copyright"><i class="fa-regular fa-copyright"></i> 2023 JustChecK. All rights reserved</p>
+        </div>
+    </footer>
+
+    <script>
+        const search = document.getElementById('search');
+        const searchButton = document.getElementById('searchButton');
+        const flash = document.getElementById('flash');
+
+        function clicked() {
+            const text = search.value.trim();
+            if (text === "arunodaya" || text === "Arunodaya") {
+                window.location.href = "hospital.html#aru";
+            } else if (text === "Shruthi" || text === "shruthi") {
+                window.location.href = "hospital.html#shr";
+            } else if (text === "Dr.Kulkarni Eye" || text === "dr.Kulkarni Eye") {
+                window.location.href = "hospital.html#kul";
+            } else if (text === "Tirumula" || text === "tirumula") {
+                window.location.href = "hospital.html#tiru";
+            } else if (text === "Dr Satish" || text === "dr satish") {
+                window.location.href = "doctor.html#sat";
+            } else {
+                flash.style.display = "block";
+                search.value = "";
+                search.placeholder = "eg: dr satish or arunodaya";
+            }
+        }
+
+        function handleKeyPress(event) {
+            if (event.key === "Enter") {
+                clicked();
+            }
+        }
+
+        searchButton.addEventListener('click', clicked);
+        search.addEventListener('keypress', handleKeyPress);
+    </script>
+</body>
+
+</html>
